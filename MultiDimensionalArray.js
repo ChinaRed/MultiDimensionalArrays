@@ -1,1 +1,7 @@
+module.exports = {
 
+generator : function () {
+
+},
+
+};
