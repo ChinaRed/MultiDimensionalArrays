@@ -40,35 +40,57 @@ describe('generator_2d', function() {
     
     var result = mda.generator_2d();
 
-
     expect(result).to.be.a('array');
     result.should.have.length(3);
-
-    result.forEach(function(bitchass){
-      bitchass.should.have.length(3);
-      expect(bitchass).to.be.a('array');
-    });
-
+  });
+    
+  it('inner array has length 3 with random boolean values with no arguments', function(){
+      
+      result.forEach(function(innArray){
+      innerArray.should.have.length(3);
+      expect(innerArray).to.be.a('array');
+      });
   });
 
   it("Returns an array (length 5) containting arrays (length 4) with random boolean values using 2 arguments",function(){
 
-    var result = mda.generator_2d(1,2);
+    var result = mda.generator_2d();
 
     expect(result).to.be.a('array');
     expect(result).to.have.length(5);
 
     result.forEach(function(array){
-      expect(array).to.be.a('array');
-      expect(array).to.have.length(4);
-
+    expect(array).to.be.a('array');
+    expect(array).to.have.length(4);
     });
-
 
   });
 
+}); //end of 2nd describe
+
+describe("generator_3d", function() {
+
+  it("Returns an array(length 3), each containing arrays(length 4), each array containing arrays(length 5)", function() {
+    
+    var result = mda.generator_3d();
+
+    expect(result).to.be.a('array');
+    expect(result).to.have.length(3);
+
+    result.forEach(function(array){
+      expect(array).to.be.a('array');
+      expect(array).to.have.length(4);
+
+      array.forEach(function(insideArray){
+        expect(insideArray).to.be.a('array');
+        expect(insideArray).to.have.length(5);
+      });
+
+    });
+
+  });
+  
+}); //end of third describe
 
 
 
-
-}); //end of second describe
