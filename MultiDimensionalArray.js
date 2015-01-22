@@ -19,7 +19,7 @@ generator_2d : function () {
 },
   
 generator_3d : function () {
-/*
+
   return [
   [  
     [1,0,1,0,0],  
@@ -40,10 +40,13 @@ generator_3d : function () {
     [0,1,0,0,1]  
   ]  
 ];
-*/
 
 },
 
+count : function() {
+
+
+},
 
 
 };
