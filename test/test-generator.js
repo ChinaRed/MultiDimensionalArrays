@@ -34,6 +34,11 @@ describe('generator_1d', function() {
 
 }); //end of first describe
 
+
+
+
+
+
 describe('generator_2d', function() {
 
   it('Returns an array with 3 arrays inside, each inner array has length 3 with random boolean values with no arguments',function() {
@@ -43,18 +48,22 @@ describe('generator_2d', function() {
     expect(result).to.be.a('array');
     result.should.have.length(3);
   });
+
     
   it('inner array has length 3 with random boolean values with no arguments', function(){
       
-      result.forEach(function(innArray){
-      innerArray.should.have.length(3);
-      expect(innerArray).to.be.a('array');
-      });
+    var result = mda.generator_2d();
+
+    result.forEach(function(innerArray){
+    innerArray.should.have.length(3);
+    expect(innerArray).to.be.a('array');
+    });
+
   });
 
   it("Returns an array (length 5) containting arrays (length 4) with random boolean values using 2 arguments",function(){
 
-    var result = mda.generator_2d();
+    var result = mda.generator_2d(5,4);
 
     expect(result).to.be.a('array');
     expect(result).to.have.length(5);
@@ -72,7 +81,7 @@ describe("generator_3d", function() {
 
   it("Returns an array(length 3), each containing arrays(length 4), each array containing arrays(length 5)", function() {
     
-    var result = mda.generator_3d();
+    var result = mda.generator_3d( 3, 4, 5);
 
     expect(result).to.be.a('array');
     expect(result).to.have.length(3);
